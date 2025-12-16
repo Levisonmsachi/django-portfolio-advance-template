@@ -1,8 +1,13 @@
-# Levvie‑Livvie — Django Portfolio (Advanced Template)
+# Levvie-Livvie  
+### Django Portfolio — Advanced Template
 
 <p align="center">
-  <strong>A clean, database‑driven portfolio website built with Django.</strong><br/>
-  Projects • Skills • About • Contact form • Admin dashboard
+  <img src="https://raw.githubusercontent.com/Levisonmsachi/django-portfolio-advance-template/main/docs/screenshots/hero.png" width="720" alt="Portfolio Preview">
+</p>
+
+<p align="center">
+  <strong>A clean, database-driven portfolio website built with Django.</strong><br>
+  Projects · Skills · About · Contact · Admin Dashboard
 </p>
 
 <p align="center">
@@ -20,191 +25,183 @@
 ---
 
 ## Overview
-This project is an **advanced Django portfolio template** designed to showcase your work in a professional way.
-It includes dynamic sections powered by a database (Projects, Skills, About) and a contact form to receive messages.
 
-> **Author:** Levvie‑Livvie  
-> **Email:** levisonmsachi03@gmail.com
+**Levvie-Livvie Django Portfolio** is an advanced, production-ready Django template designed to help developers present their work professionally.
+
+All major sections are **database-powered**, making updates easy through the Django Admin — no code changes required for content updates.
+
+**Author:** Levvie-Livvie  
+**Email:** levisonmsachi03@gmail.com
 
 ---
 
 ## Features
-- **Projects showcase** (title, description, technology, optional image URL)
-- **Skills section** with proficiency levels
-- **About Me** page (bio, professional summary, focus areas, availability)
-- **Contact page** + **ContactMessage** model to store inquiries
-- **Django Admin** for managing content
-- Responsive templates + static assets (CSS)
+
+- Dynamic **Projects** showcase (title, description, tech stack, image URL)
+- Structured **Skills** section with proficiency levels
+- Professional **About Me** page (bio, focus areas, availability)
+- Functional **Contact Form** with stored submissions
+- Fully configured **Django Admin Dashboard**
+- Clean, responsive templates with static assets
+- Beginner-friendly yet production-scalable structure
 
 ---
 
 ## Built With
+
 - **Python**
-- **Django** (project settings indicate Django 6.x)
-- **SQLite** (default, easy local development)
-- HTML templates + CSS (Django templates)
+- **Django** (6.x)
+- **SQLite** (default database)
+- Django Templates (HTML)
+- CSS (static files)
 
 ---
 
 ## Screenshots
-Add screenshots/gifs after you run the project locally:
 
-- `docs/screenshots/home.png`
-- `docs/screenshots/projects.png`
-- `docs/screenshots/contact.png`
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Levisonmsachi/django-portfolio-advance-template/main/docs/screenshots/home.png" width="700">
+</p>
 
-> Tip: GitHub renders images beautifully when you keep them in `docs/`.
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Levisonmsachi/django-portfolio-advance-template/main/docs/screenshots/projects.png" width="700">
+</p>
 
-Example:
-```md
-![Home](docs/screenshots/home.png)
-```
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Levisonmsachi/django-portfolio-advance-template/main/docs/screenshots/contact.png" width="700">
+</p>
 
 ---
 
 ## Project Structure
-High-level layout:
 
 ```text
 portfolio/
-├─ main/                  # App: pages, models, templates, static
+├─ main/                     # Core app
 │  ├─ migrations/
 │  ├─ static/main/css/
 │  ├─ templates/main/
-│  ├─ models.py            # Project, Skills, AboutMe, ContactInfo, ContactMessage
+│  ├─ models.py              # Project, Skill, AboutMe, ContactMessage
 │  ├─ views.py
 │  └─ urls.py
-├─ portfolio/              # Django project config
+├─ portfolio/                # Project configuration
 │  ├─ settings.py
 │  ├─ urls.py
-│  └─ wsgi.py/asgi.py
+│  └─ wsgi.py / asgi.py
 ├─ db.sqlite3
 └─ manage.py
-```
-
----
-
-## Getting Started
-
-### 1) Clone the repository
-```bash
+Getting Started
+1. Clone the repository
+bash
+Copy code
 git clone https://github.com/Levisonmsachi/django-portfolio-advance-template.git
 cd django-portfolio-advance-template
-```
+2. Create and activate a virtual environment
+Windows (PowerShell):
 
-### 2) Create & activate a virtual environment
-**Windows (PowerShell):**
-```powershell
+powershell
+Copy code
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
-```
+Windows (CMD):
 
-**Windows (CMD):**
-```bat
+bat
+Copy code
 python -m venv .venv
 .\.venv\Scripts\activate
-```
+macOS / Linux:
 
-**macOS/Linux:**
-```bash
+bash
+Copy code
 python3 -m venv .venv
 source .venv/bin/activate
-```
-
-### 3) Install dependencies
-If you have a `requirements.txt`, install from it:
-```bash
-pip install -r requirements.txt
-```
-
-If you don’t have one yet, you can still install Django directly:
-```bash
+3. Install dependencies
+bash
+Copy code
 pip install django
-```
+(You can add requirements.txt later for convenience.)
 
-> Recommended: add a `requirements.txt` later to make setup 1‑command for everyone.
-
-### 4) Run migrations
-```bash
+4. Apply migrations
+bash
+Copy code
 python manage.py migrate
-```
-
-### 5) Create an admin user
-```bash
+5. Create an admin user
+bash
+Copy code
 python manage.py createsuperuser
-```
-
-### 6) Start the dev server
-```bash
+6. Run the development server
+bash
+Copy code
 python manage.py runserver
-```
+Open in your browser:
 
-Open:
-- App: http://127.0.0.1:8000/
-- Admin: http://127.0.0.1:8000/admin/
+Website: http://127.0.0.1:8000/
 
----
+Admin: http://127.0.0.1:8000/admin/
 
-## Content Management (Admin)
-You can manage your portfolio content via the admin panel:
-- Add/edit **Projects**
-- Add/edit **Skills**
-- Update **About Me**
-- View contact form submissions (**ContactMessage**)
+Admin Content Management
+The Django Admin allows you to manage:
 
----
+Projects
 
-## Configuration Notes
-This template uses:
-- `DEBUG = True` for local development
-- `ALLOWED_HOSTS = []` (update for production)
-- SQLite database by default (`db.sqlite3`)
+Skills
+
+About Me content
+
+Contact messages
+
+All portfolio updates can be done without touching code.
+
+Configuration Notes
+Default settings:
+
+DEBUG = True
+
+SQLite database
+
+Empty ALLOWED_HOSTS
 
 For production:
-- Set `DEBUG = False`
-- Configure `ALLOWED_HOSTS`
-- Use a secure `SECRET_KEY` via environment variables
-- Configure static files hosting (`collectstatic`)
 
----
+Set DEBUG = False
 
-## Deployment
-You can deploy this Django project to platforms like:
-- Render
-- Railway
-- Fly.io
-- Heroku (community buildpacks)
-- VPS (Nginx + Gunicorn)
+Configure ALLOWED_HOSTS
 
-Typical production steps:
-1. Set environment variables (`SECRET_KEY`, `DEBUG`, `ALLOWED_HOSTS`)
-2. Install dependencies
-3. Run migrations
-4. Collect static files:
-   ```bash
-   python manage.py collectstatic
-   ```
-5. Serve with Gunicorn/Uvicorn behind a reverse proxy
+Store SECRET_KEY in environment variables
 
----
+Run collectstatic
 
-## Roadmap
-- [ ] Add `requirements.txt`
-- [ ] Add `.env` support (e.g., `python-decouple`)
-- [ ] Add image upload support (media) instead of URL-only
-- [ ] Add tests for core pages & contact form
+Deployment
+This project can be deployed to:
 
----
+Render
 
-## License
-Choose a license before publishing publicly (MIT is a common choice).  
-If you want, I can add a `LICENSE` file too.
+Railway
 
----
+Fly.io
 
-## Contact
-**Levvie‑Livvie**  
-📧 **levisonmsachi03@gmail.com**
+Heroku
 
-If you like this template, feel free to fork it and tailor it to your personal brand.
+VPS (Gunicorn + Nginx)
 
+Typical flow:
+
+bash
+Copy code
+python manage.py migrate
+python manage.py collectstatic
+gunicorn portfolio.wsgi
+Roadmap
+ Add requirements.txt
+
+ Environment variable support (.env)
+
+ Media uploads for project images
+
+ Automated tests
+
+ Theme customization options
+
+Contact
+Levvie-Livvie
+📧 levisonmsachi03@gmail.com
