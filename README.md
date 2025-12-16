@@ -2,7 +2,7 @@
 ### Django Portfolio — Advanced Template
 
 <p align="center">
-  <img src="[https://raw.githubusercontent.com/Levisonmsachi/django-portfolio-advance-template/main/docs/screenshots/hero.png](https://github.com/Levisonmsachi/django-portfolio-advance-template/blob/main/Screenshot%202025-12-16%20130802.png)" width="720" alt="Portfolio Preview">
+  <img src="https://github.com/Levisonmsachi/django-portfolio-advance-template/blob/main/Screenshot%202025-12-16%20130802.png" width="720" alt="Portfolio Preview">
 </p>
 
 <p align="center">
@@ -205,4 +205,5 @@ Roadmap
 Contact
 Levvie-Livvie
 📧 levisonmsachi03@gmail.com
+
 
