@@ -315,4 +315,5 @@ https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoC
 
 ✨ Crafted with passion by Levvie-Livvie • December 2025 ✨
 
-</div> ```
+</div>
+
