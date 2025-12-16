@@ -60,15 +60,15 @@ All major sections are **database-powered**, making updates easy through the Dja
 ## Screenshots
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Levisonmsachi/django-portfolio-advance-template/main/docs/screenshots/home.png" width="700">
+  <img src="https://github.com/Levisonmsachi/django-portfolio-advance-template/blob/main/Screenshot%202025-12-16%20120823.png" width="700">
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Levisonmsachi/django-portfolio-advance-template/main/docs/screenshots/projects.png" width="700">
+  <img src="https://github.com/Levisonmsachi/django-portfolio-advance-template/blob/main/Screenshot%202025-12-16%20130743.png" width="700">
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Levisonmsachi/django-portfolio-advance-template/main/docs/screenshots/contact.png" width="700">
+  <img src="https://github.com/Levisonmsachi/django-portfolio-advance-template/blob/main/Screenshot%202025-12-16%20120847.png" width="700">
 </p>
 
 ---
@@ -205,5 +205,6 @@ Roadmap
 Contact
 Levvie-Livvie
 📧 levisonmsachi03@gmail.com
+
 
 
