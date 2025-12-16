@@ -21,10 +21,10 @@
     <img src="https://img.shields.io/badge/License-MIT-teal?style=for-the-badge" alt="License">
   </a>
   <a href="https://www.python.org/">
-    <img src="https://img.shields.io/badge/Python-3.10+-306998?style=for-the-badge&logo=python" alt="Python">
+    <img src="https://img.shields.io/badge/Python-3.10+-306998?style=for-the-badge&logo=python&logoColor=white" alt="Python">
   </a>
   <a href="https://www.djangoproject.com/">
-    <img src="https://img.shields.io/badge/Django-6.0+-092E20?style=for-the-badge&logo=django" alt="Django">
+    <img src="https://img.shields.io/badge/Django-6.0+-092E20?style=for-the-badge&logo=django&logoColor=white" alt="Django">
   </a>
 </p>
 
@@ -34,52 +34,52 @@
   <a href="#-quick-start">Installation</a> •
   <a href="#-architecture">Architecture</a> •
   <a href="#-deployment">Deployment</a> •
-  <a href="#-contact">Contact</a>
+  <a href="#-contact--connect">Contact</a>
 </p>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/-DYNAMIC_CONTENT-7209B7?style=flat-square" alt="Dynamic">
-  <img src="https://img.shields.io/badge/-ADMIN_DASHBOARD-3A0CA3?style=flat-square" alt="Admin">
-  <img src="https://img.shields.io/badge/-FULLY_RESPONSIVE-4CC9F0?style=flat-square" alt="Responsive">
-  <img src="https://img.shields.io/badge/-PRODUCTION_READY-F72585?style=flat-square" alt="Production">
+  <img src="https://img.shields.io/badge/DYNAMIC_CONTENT-7209B7?style=flat-square">
+  <img src="https://img.shields.io/badge/ADMIN_DASHBOARD-3A0CA3?style=flat-square">
+  <img src="https://img.shields.io/badge/FULLY_RESPONSIVE-4CC9F0?style=flat-square">
+  <img src="https://img.shields.io/badge/PRODUCTION_READY-F72585?style=flat-square">
 </div>
 
 ---
 
 ## ✨ Key Features
 
-### 🎯 **Core Capabilities**
-- **Dynamic Content Management** - All portfolio sections powered by database models
-- **Zero-Code Updates** - Modify content through Django Admin without touching code
-- **Professional Presentation** - Clean, modern design with optimal UX/UI
+### 🎯 Core Capabilities
+- Dynamic content management via Django models
+- Zero-code updates using Django Admin
+- Clean, modern, production-ready UI
 
-### 📊 **Portfolio Modules**
-| Module | Description | Admin Configurable |
-|--------|-------------|-------------------|
-| **Projects Showcase** | Display projects with images, descriptions, and tech stacks | ✅ |
-| **Skills Dashboard** | Visual skill matrix with proficiency levels | ✅ |
-| **About Me Section** | Professional bio, focus areas, and availability status | ✅ |
-| **Contact System** | Functional contact form with message storage | ✅ |
+### 📊 Portfolio Modules
 
-### 🛠️ **Technical Excellence**
-- **Modern Django Architecture** - Follows Django best practices
-- **Scalable Database Design** - Ready for PostgreSQL, MySQL, or SQLite
-- **Static Asset Optimization** - Organized CSS and template structure
-- **Security Ready** - Built-in Django security features
-- **REST API Ready** - Easy to extend with Django REST Framework
+| Module | Description | Admin |
+|------|------------|-------|
+| Projects | Showcase projects with images & stacks | ✅ |
+| Skills | Visual proficiency matrix | ✅ |
+| About | Bio, focus areas, availability | ✅ |
+| Contact | Message storage system | ✅ |
+
+### 🛠 Technical Excellence
+- Django best-practice architecture
+- Scalable DB (SQLite / PostgreSQL / MySQL)
+- Secure defaults
+- REST-API ready
 
 ---
 
 ## 📸 Live Preview
 
 <div align="center">
-  
-### 🖥️ Main Portfolio Interface
-<img src="https://github.com/Levisonmsachi/django-portfolio-advance-template/raw/main/Screenshot%202025-12-16%20120823.png" width="90%" alt="Portfolio Interface">
-  
-### 📱 Responsive Design
-<img src="https://github.com/Levisonmsachi/django-portfolio-advance-template/raw/main/Screenshot%202025-12-16%20130743.png" width="45%" style="margin-right: 2%;" alt="Mobile View">
-<img src="https://github.com/Levisonmsachi/django-portfolio-advance-template/raw/main/Screenshot%202025-12-16%20120847.png" width="45%" alt="Admin Panel">
+
+<img src="https://github.com/Levisonmsachi/django-portfolio-advance-template/raw/main/Screenshot%202025-12-16%20120823.png" width="90%">
+
+<br><br>
+
+<img src="https://github.com/Levisonmsachi/django-portfolio-advance-template/raw/main/Screenshot%202025-12-16%20130743.png" width="45%">
+<img src="https://github.com/Levisonmsachi/django-portfolio-advance-template/raw/main/Screenshot%202025-12-16%20120847.png" width="45%">
 
 </div>
 
@@ -87,232 +87,125 @@
 
 ## 🚀 Quick Start
 
-### **Prerequisites**
-- Python 3.10 or higher
-- pip (Python package manager)
+### Prerequisites
+- Python 3.10+
+- pip
 - Git
 
-### **Installation & Setup**
+### Installation
 
 ```bash
-# 1. Clone the repository
 git clone https://github.com/Levisonmsachi/django-portfolio-advance-template.git
 cd django-portfolio-advance-template
 
-# 2. Create and activate virtual environment
-# Windows
 python -m venv venv
-venv\Scripts\activate
+venv\Scripts\activate  # Windows
+source venv/bin/activate  # macOS/Linux
 
-# macOS/Linux
-python3 -m venv venv
-source venv/bin/activate
-
-# 3. Install dependencies
 pip install django
-
-# 4. Run migrations
 python manage.py migrate
-
-# 5. Create superuser (for admin access)
 python manage.py createsuperuser
-
-# 6. Launch development server
 python manage.py runserver
-Access Points
-🌐 Portfolio Website: http://127.0.0.1:8000/
+```
 
-⚙️ Admin Dashboard: http://127.0.0.1:8000/admin/
+**Access**
+- Portfolio: http://127.0.0.1:8000/
+- Admin: http://127.0.0.1:8000/admin/
 
-📧 Default Admin: Use credentials from createsuperuser step
+---
 
-🏗️ Architecture
-Project Structure
-text
+## 🏗 Architecture
+
+```text
 django-portfolio-advance-template/
-│
-├── portfolio/                    # Project Configuration
-│   ├── __init__.py
-│   ├── settings.py              # Django settings
-│   ├── urls.py                  # Main URL routing
-│   ├── wsgi.py                  # WSGI configuration
-│   └── asgi.py                  # ASGI configuration
-│
-├── main/                        # Core Application
-│   ├── migrations/              # Database migrations
-│   ├── static/main/             # Static assets
-│   │   ├── css/                 # Stylesheets
-│   │   └── images/              # Static images
-│   │
-│   ├── templates/main/          # HTML templates
-│   │   ├── base.html            # Base template
-│   │   ├── index.html           # Home page
-│   │   ├── projects.html        # Projects showcase
-│   │   ├── skills.html          # Skills display
-│   │   ├── about.html           # About section
-│   │   └── contact.html         # Contact form
-│   │
-│   ├── __init__.py
-│   ├── admin.py                 # Admin configurations
-│   ├── apps.py                  # App configuration
-│   ├── models.py                # Database models
-│   ├── views.py                 # Application views
-│   ├── urls.py                  # App URL routing
-│   └── tests.py                 # Test cases
-│
-├── db.sqlite3                   # Database (development)
-├── manage.py                    # Django CLI
-└── README.md                    # Documentation
-Database Models
-python
-# Core Models Overview
-# Project: title, description, tech_stack, image_url, date_created
-# Skill: name, category, proficiency (1-100), icon_class
-# AboutMe: bio, focus_areas, availability, resume_url
-# ContactMessage: name, email, message, timestamp, is_read
-⚙️ Admin Dashboard Guide
-Accessing the Dashboard
-Navigate to /admin
+├── portfolio/
+├── main/
+│   ├── models.py
+│   ├── views.py
+│   ├── admin.py
+│   └── urls.py
+├── db.sqlite3
+├── manage.py
+└── README.md
+```
 
-Login with superuser credentials
+### Core Models
+```python
+Project(title, description, tech_stack, image, created)
+Skill(name, category, proficiency)
+AboutMe(bio, availability, resume)
+ContactMessage(name, email, message, timestamp)
+```
 
-Manage all portfolio content through intuitive interfaces
+---
 
-Content Management
-Section	Actions Available
-Projects	Add, edit, delete, preview
-Skills	Update proficiency, categories
-About Me	Edit bio, availability status
-Messages	View, mark as read, respond
-Quick Updates
-Change Bio: Main → AboutMe → Edit
+## 🚢 Deployment
 
-Add Project: Main → Projects → Add
-
-Update Skills: Main → Skills → Select and edit
-
-🚢 Deployment
-Platform Recommendations
-Platform	Difficulty	Best For
-Render	Easy	Quick deployment, free tier
-Railway	Easy	Automatic deployments
-Heroku	Medium	Traditional PaaS
-VPS (DigitalOcean)	Advanced	Full control, scalable
-AWS Elastic Beanstalk	Medium	AWS ecosystem
-Production Checklist
-bash
-# 1. Set environment variables
+```bash
 DEBUG=False
-SECRET_KEY=your_production_secret
-ALLOWED_HOSTS=yourdomain.com,www.yourdomain.com
-
-# 2. Collect static files
+SECRET_KEY=your_secret
+ALLOWED_HOSTS=yourdomain.com
 python manage.py collectstatic
+```
 
-# 3. Use production database
-# Update settings.py with PostgreSQL/MySQL
+Supports:
+- Render
+- Railway
+- Heroku
+- VPS
+- AWS EB
 
-# 4. Configure static files (WhiteNoise/NGINX)
-# 5. Set up SSL certificate
-# 6. Configure domain and DNS
-Quick Render Deployment
-Push code to GitHub repository
+---
 
-Create new Web Service on Render
+## 📈 Roadmap
+- Blog Module
+- Dark / Light Mode
+- REST API
+- Docker
+- Analytics
+- Multi-language support
 
-Connect GitHub repository
+---
 
-Set build command: pip install django && python manage.py migrate
+## 🛡 Support
 
-Set start command: gunicorn portfolio.wsgi:application
+| Issue | Fix |
+|-----|-----|
+| Port busy | `python manage.py runserver 8080` |
+| Migration error | Re-migrate DB |
+| Static missing | collectstatic |
 
-Add environment variables
+---
 
-Deploy!
+## 📞 Contact & Connect
 
-📈 Roadmap
-Next Features
-Media Upload Integration - Cloudinary/AWS S3 support
-
-Dark/Light Theme Toggle - User preference switching
-
-Analytics Dashboard - Visitor insights and metrics
-
-Blog Module - Integrated blogging system
-
-API Endpoints - REST API for external integrations
-
-Docker Support - Containerized deployment
-
-Automated Testing - Comprehensive test suite
-
-Multi-language Support - Internationalization (i18n)
-
-Enhancements Planned
-Email notifications for contact form
-
-Project filtering and search
-
-Skill progress animations
-
-SEO optimization tools
-
-Performance monitoring
-
-🛡️ Support
-Troubleshooting Common Issues
-Issue	Solution
-Port already in use	python manage.py runserver 8080
-Migration errors	Delete db.sqlite3 and migration files, re-migrate
-Static files not loading	Run python manage.py collectstatic
-Admin access issues	Recreate superuser: python manage.py createsuperuser
-Need Help?
-Check existing GitHub Issues
-
-Review Django documentation for framework-specific questions
-
-Contact support for template-specific issues
-
-📞 Contact & Connect
 <div align="center">
-Levvie-Livvie
-Full Stack Developer & Django Specialist
 
-https://img.shields.io/badge/Email-levisonmsachi03@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white
-https://img.shields.io/badge/GitHub-Levisonmsachi-181717?style=for-the-badge&logo=github&logoColor=white
-https://img.shields.io/badge/%F0%9F%96%A5%EF%B8%8F_Portfolio_Project-4CC9F0?style=for-the-badge&logo=google-chrome&logoColor=white
+<strong>Levvie-Livvie</strong><br>
+Full Stack Developer · Django Specialist
+
+<br>
+
+<a href="mailto:levisonmsachi03@gmail.com">
+  <img src="https://img.shields.io/badge/Email-levisonmsachi03@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white">
+</a>
+
+<a href="https://github.com/Levisonmsachi">
+  <img src="https://img.shields.io/badge/GitHub-Levisonmsachi-181717?style=for-the-badge&logo=github&logoColor=white">
+</a>
 
 </div>
-📄 License
-This project is licensed under the MIT License - see the LICENSE file for details.
 
-Permissions Include:
+---
 
-✅ Commercial use
-
-✅ Modification
-
-✅ Distribution
-
-✅ Private use
-
-Requirements:
-
-📝 License and copyright notice preservation
+## 🌟 Show Your Support
 
 <div align="center">
-🌟 Show Your Support
-If this project helped you, please give it a star!
+  <img src="https://img.shields.io/github/stars/Levisonmsachi/django-portfolio-advance-template?style=for-the-badge">
+</div>
 
-https://img.shields.io/github/stars/Levisonmsachi/django-portfolio-advance-template?style=social&label=Star&maxAge=2592000
+---
 
-🎯 Built With Precision
-https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white
-https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white
-https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white
-https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white
-https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white
-
-✨ Crafted with passion by Levvie-Livvie • December 2025 ✨
-
-</div> ```
+<p align="center">
+  <sub>✨ Crafted with precision by <strong>Levvie-Livvie</strong> · December 2025 ✨</sub>
+</p>
