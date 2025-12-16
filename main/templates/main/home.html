@@ -1,0 +1,197 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Home - My Portfolio{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div style="text-align: center; padding: 50px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 10px;">
+    <h1 style="font-size: 48px; margin-bottom: 20px;">{{ welcome_message }}</h1>
+    <p style="font-size: 20px; max-width: 800px; margin: 0 auto;">Full-Stack Developer & Django Enthusiast</p>
+</div>
+
+<!-- Stats Overview -->
+<div style="margin: 40px 0;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+        <div style="background: white; border-radius: 10px; padding: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;">
+            <h2 style="margin: 0; font-size: 36px; color: #667eea;">{{ total_projects }}</h2>
+            <p style="margin: 10px 0 0; color: #666; font-weight: 500;">Total Projects</p>
+        </div>
+        
+        <div style="background: white; border-radius: 10px; padding: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;">
+            <h2 style="margin: 0; font-size: 36px; color: #10b981;">{{ published_projects }}</h2>
+            <p style="margin: 10px 0 0; color: #666; font-weight: 500;">Published</p>
+        </div>
+        
+        <div style="background: white; border-radius: 10px; padding: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;">
+            <h2 style="margin: 0; font-size: 36px; color: #f59e0b;">{{ technologies_count }}</h2>
+            <p style="margin: 10px 0 0; color: #666; font-weight: 500;">Technologies Used</p>
+        </div>
+        
+        <div style="background: white; border-radius: 10px; padding: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;">
+            <h2 style="margin: 0; font-size: 36px; color: #ef4444;">{{ skills_count }}</h2>
+            <p style="margin: 10px 0 0; color: #666; font-weight: 500;">Skills Mastered</p>
+        </div>
+    </div>
+</div>
+
+<!-- Recent Projects Section -->
+<div style="margin: 60px 0;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+        <h2 style="font-size: 32px; color: #1f2937;">Recent Projects</h2>
+        <a href="{% url 'projects' %}" style="background: #3b82f6; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: 500;">View All Projects →</a>
+    </div>
+    
+    {% if recent_projects %}
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px;">
+            {% for project in recent_projects %}
+                <div style="border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: transform 0.3s;">
+                    {% if project.image_url %}
+                        <div style="height: 180px; overflow: hidden;">
+                            <img src="{{ project.image_url }}" 
+                                 alt="{{ project.title }}" 
+                                 style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                    {% else %}
+                        <div style="height: 180px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center;">
+                            <span style="color: white; font-weight: 600;">{{ project.title }}</span>
+                        </div>
+                    {% endif %}
+                    
+                    <div style="padding: 25px;">
+                        <h3 style="margin: 0 0 10px; font-size: 20px; color: #1f2937;">{{ project.title }}</h3>
+                        <div style="margin-bottom: 15px;">
+                            <span style="background: #e0e7ff; color: #3730a3; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 500;">
+                                {{ project.technology|truncatewords:3 }}
+                            </span>
+                        </div>
+                        <p style="color: #6b7280; line-height: 1.6; margin-bottom: 20px;">{{ project.description|truncatewords:25 }}</p>
+                        
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 15px; border-top: 1px solid #e5e7eb;">
+                            <div>
+                                <small style="color: #9ca3af;">{{ project.created_at|date:"M d, Y" }}</small>
+                            </div>
+                            <div>
+                                <a href="{% url 'project-detail' project.id %}" 
+                                   style="background: #10b981; color: white; padding: 8px 16px; border-radius: 5px; text-decoration: none; font-size: 14px; font-weight: 500;">
+                                    View Details →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div style="text-align: center; padding: 50px; background: #f9fafb; border-radius: 10px;">
+            <h3 style="color: #6b7280; margin-bottom: 10px;">No projects yet</h3>
+            <p style="color: #9ca3af;">Check back soon for my latest work!</p>
+        </div>
+    {% endif %}
+</div>
+
+<!-- Skills Preview Section -->
+<div style="margin: 60px 0;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+        <h2 style="font-size: 32px; color: #1f2937;">Top Skills</h2>
+        <a href="{% url 'skills' %}" style="background: #3b82f6; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: 500;">View All Skills →</a>
+    </div>
+    
+    {% if top_skills %}
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px;">
+            {% for skill in top_skills %}
+                <div style="border: 1px solid #e5e7eb; border-radius: 10px; padding: 20px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                        <div>
+                            <h4 style="margin: 0; color: #1f2937; font-weight: 600;">{{ skill.name }}</h4>
+                            <small style="color: #6b7280;">
+                                {% if skill.proficiency >= 80 %}Expert{% elif skill.proficiency >= 60 %}Intermediate{% else %}Beginner{% endif %} Level
+                            </small>
+                        </div>
+                        <span style="background: 
+                            {% if skill.proficiency >= 80 %}#10b981
+                            {% elif skill.proficiency >= 60 %}#f59e0b
+                            {% else %}#6b7280
+                            {% endif %};
+                            color: white; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600;">
+                            {{ skill.proficiency }}%
+                        </span>
+                    </div>
+                    <div style="background: #e5e7eb; height: 6px; border-radius: 3px;">
+                        <div style="background: 
+                            {% if skill.proficiency >= 80 %}#10b981
+                            {% elif skill.proficiency >= 60 %}#f59e0b
+                            {% else %}#6b7280
+                            {% endif %};
+                            height: 100%; border-radius: 3px; width: {{ skill.proficiency }}%;">
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>
+
+<!-- Technologies Section -->
+<div style="margin: 60px 0;">
+    <h2 style="font-size: 32px; color: #1f2937; margin-bottom: 30px;">Technologies I Work With</h2>
+    
+    {% if technologies %}
+        <div style="display: flex; flex-wrap: wrap; gap: 15px;">
+            {% for tech in technologies %}
+                <span style="background: 
+                    {% cycle '#e0e7ff' '#fef3c7' '#fce7f3' '#d1fae5' as bgcolor %};
+                    color: 
+                    {% cycle '#3730a3' '#92400e' '#9d174d' '#065f46' as textcolor %};
+                    padding: 10px 20px; border-radius: 25px;
+                    font-size: 14px; font-weight: 500; border: 1px solid rgba(0,0,0,0.05);">
+                    {{ tech }}
+                </span>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>
+
+<!-- Call to Action -->
+<div style="margin: 60px 0; background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%); border-radius: 15px; padding: 50px; text-align: center;">
+    <h2 style="font-size: 36px; color: #1f2937; margin-bottom: 20px;">Ready to Collaborate?</h2>
+    <p style="font-size: 18px; color: #6b7280; max-width: 600px; margin: 0 auto 30px;">
+        I'm always open to discussing new opportunities and interesting projects.
+    </p>
+    <div style="display: flex; gap: 20px; justify-content: center;">
+        <a href="{% url 'projects' %}" style="background: #3b82f6; color: white; padding: 12px 30px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px;">
+            View My Work
+        </a>
+        <a href="{% url 'contact' %}" style="background: white; color: #3b82f6; padding: 12px 30px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; border: 2px solid #3b82f6;">
+            Contact Me
+        </a>
+    </div>
+</div>
+
+<!-- Database Info Note -->
+<div style="margin-top: 50px; padding: 25px; background: #f8fafc; border-radius: 10px; border-left: 4px solid #3b82f6;">
+    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+        <div style="background: #3b82f6; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px;">
+            💡
+        </div>
+        <h3 style="margin: 0; color: #1f2937;">Database Powered Portfolio</h3>
+    </div>
+    <p style="color: #6b7280; margin-bottom: 15px;">This portfolio is fully powered by Django's database system. All data is dynamically loaded and managed through Django ORM.</p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; font-size: 14px;">
+        <div>
+            <strong style="color: #374151;">Models Used:</strong>
+            <div style="margin-top: 5px;">
+                <span style="background: #e0e7ff; color: #3730a3; padding: 4px 10px; border-radius: 4px; margin-right: 5px;">Projects</span>
+                <span style="background: #fef3c7; color: #92400e; padding: 4px 10px; border-radius: 4px;">Skills</span>
+            </div>
+        </div>
+        <div>
+            <strong style="color: #374151;">Data Source:</strong>
+            <div style="margin-top: 5px; color: #6b7280;">Django ORM + SQLite</div>
+        </div>
+        <div>
+            <strong style="color: #374151;">Features:</strong>
+            <div style="margin-top: 5px; color: #6b7280;">Dynamic Content • Real-time Stats • Admin Management</div>
+        </div>
+    </div>
+</div>
+{% endblock %}

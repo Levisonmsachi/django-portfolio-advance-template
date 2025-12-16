@@ -1,0 +1,231 @@
+{% extends 'main/base.html' %}
+
+{% block title %}My Projects | Portfolio{% endblock %}
+
+{% block content %}
+<h1>My Projects & Portfolio</h1>
+
+<!-- Stats Overview -->
+<div style="
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 25px;
+  border-radius: 10px;
+  margin: 25px 0;
+">
+  <div style="display: flex; justify-content: space-around; text-align: center; flex-wrap: wrap;">
+    <div style="margin: 15px;">
+      <h2 style="margin: 0; font-size: 36px; font-weight: bold">{{ projects|length }}</h2>
+      <p style="margin: 5px 0; opacity: 0.9">Total Projects</p>
+    </div>
+    <div style="margin: 15px;">
+      <h2 style="margin: 0; font-size: 36px; font-weight: bold">📚</h2>
+      <p style="margin: 5px 0; opacity: 0.9">In Development</p>
+    </div>
+    <div style="margin: 15px;">
+      <h2 style="margin: 0; font-size: 36px; font-weight: bold">🚀</h2>
+      <p style="margin: 5px 0; opacity: 0.9">Ready to Explore</p>
+    </div>
+  </div>
+</div>
+
+<!-- Technology Filter -->
+{% if technologies %}
+<div style="margin: 40px 0;">
+  <h2 style="color: #667eea; border-bottom: 2px solid #667eea; padding-bottom: 15px; margin-bottom: 20px;">
+    Filter by Technology
+  </h2>
+  
+  <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px;">
+    <a href="{% url 'projects' %}" 
+       style="
+         background: {% if not selected_tech %}#667eea{% else %}#e5e7eb{% endif %};
+         color: {% if not selected_tech %}white{% else %}#6b7280{% endif %};
+         padding: 10px 18px;
+         border-radius: 25px;
+         text-decoration: none;
+         font-weight: 500;
+         font-size: 14px;
+         transition: all 0.2s;
+         display: inline-block;
+       "
+       onmouseover="this.style.background='#667eea'; this.style.color='white'; this.style.transform='scale(1.05)'"
+       onmouseout="this.style.background='{% if not selected_tech %}#667eea{% else %}#e5e7eb{% endif %}'; this.style.color='{% if not selected_tech %}white{% else %}#6b7280{% endif %}'; this.style.transform='scale(1)'"
+    >
+      ✅ All ({{ projects.count }})
+    </a>
+    
+    {% for tech in technologies %}
+      <a href="{% url 'projects' %}?tech={{ tech|urlencode }}" 
+         style="
+           background: {% if selected_tech == tech %}#667eea{% else %}#e5e7eb{% endif %};
+           color: {% if selected_tech == tech %}white{% else %}#6b7280{% endif %};
+           padding: 10px 18px;
+           border-radius: 25px;
+           text-decoration: none;
+           font-weight: 500;
+           font-size: 14px;
+           transition: all 0.2s;
+           display: inline-block;
+         "
+         onmouseover="this.style.background='#667eea'; this.style.color='white'; this.style.transform='scale(1.05)'"
+         onmouseout="this.style.background='{% if selected_tech == tech %}#667eea{% else %}#e5e7eb{% endif %}'; this.style.color='{% if selected_tech == tech %}white{% else %}#6b7280{% endif %}'; this.style.transform='scale(1)'"
+      >
+        💻 {{ tech }}
+      </a>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+<!-- Projects Grid -->
+{% if projects %}
+<div style="margin: 40px 0; border-top: 2px solid #e5e7eb; padding-top: 30px;">
+  <h2 style="color: #667eea; margin-bottom: 25px;">
+    {% if selected_tech %}
+      Projects in <span style="color: #764ba2;">{{ selected_tech }}</span>
+    {% else %}
+      All Projects
+    {% endif %}
+    <span style="color: #9ca3af; font-size: 18px; font-weight: normal;">
+      ({{ total_count }} project{{ total_count|pluralize }})
+    </span>
+  </h2>
+
+  <div style="
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+  ">
+    {% for project in projects %}
+    <div style="
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 25px;
+      background: #ffffff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    "
+    onmouseover="this.style.boxShadow='0 8px 20px rgba(102, 126, 234, 0.15)'; this.style.transform='translateY(-5px)'"
+    onmouseout="this.style.boxShadow='0 2px 8px rgba(0, 0, 0, 0.08)'; this.style.transform='translateY(0)'"
+    >
+      <!-- Project Title -->
+      <h3 style="
+        color: #667eea;
+        margin: 0 0 12px 0;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 1.4;
+      ">
+        {{ project.title }}
+      </h3>
+
+      <!-- Description -->
+      <p style="
+        color: #6b7280;
+        margin: 0 0 15px 0;
+        line-height: 1.6;
+        font-size: 14px;
+        flex-grow: 1;
+      ">
+        {{ project.description|truncatewords:30 }}
+      </p>
+
+      <!-- Technology Badge -->
+      <div style="margin: 15px 0;">
+        <span style="
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          color: white;
+          padding: 6px 14px;
+          border-radius: 20px;
+          font-size: 12px;
+          font-weight: 600;
+          display: inline-block;
+        ">
+          🔧 {{ project.technology }}
+        </span>
+      </div>
+
+      <!-- Date Info -->
+      <div style="
+        margin: 15px 0 20px 0;
+        padding-top: 15px;
+        border-top: 1px solid #e5e7eb;
+        font-size: 12px;
+        color: #9ca3af;
+      ">
+        <p style="margin: 5px 0;">
+          <strong>Created:</strong> {{ project.created_at|date:"M d, Y" }}
+        </p>
+        <p style="margin: 5px 0;">
+          <strong>Updated:</strong> {{ project.updated_at|date:"M d, Y" }}
+        </p>
+      </div>
+
+      <!-- View Details Button -->
+      <a href="{% url 'project-detail' project.id %}" 
+         style="
+           background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+           color: white;
+           padding: 12px 20px;
+           text-decoration: none;
+           border-radius: 8px;
+           font-weight: 600;
+           text-align: center;
+           transition: all 0.2s;
+           display: block;
+           box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
+         "
+         onmouseover="this.style.boxShadow='0 6px 16px rgba(102, 126, 234, 0.35)'; this.style.transform='translateY(-2px)'"
+         onmouseout="this.style.boxShadow='0 2px 8px rgba(102, 126, 234, 0.2)'; this.style.transform='translateY(0)'"
+      >
+        🔍 View Full Project
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% else %}
+<div style="
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+  border-radius: 12px;
+  border: 2px dashed #d1d5db;
+  margin: 40px 0;
+">
+  <div style="font-size: 48px; margin-bottom: 15px;">📭</div>
+  <h3 style="color: #667eea; margin: 0 0 10px 0; font-size: 22px;">No Projects Found</h3>
+  <p style="color: #6b7280; margin: 0 0 20px 0; font-size: 15px; line-height: 1.6;">
+    {% if selected_tech %}
+      Currently, no projects are using <strong>{{ selected_tech }}</strong>.<br>
+      <a href="{% url 'projects' %}" style="color: #667eea; font-weight: 600; text-decoration: none;">
+        View all projects →
+      </a>
+    {% else %}
+      No projects published yet. Check back soon as new projects will be added!
+    {% endif %}
+  </p>
+</div>
+{% endif %}
+
+<!-- Database Info Note -->
+<div style="
+  margin-top: 50px;
+  padding: 20px;
+  background: #f8fafc;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+">
+  <h3 style="margin-top: 0; color: #667eea;">💡 Database Powered</h3>
+  <p style="margin: 0; color: #6b7280; font-size: 14px;">
+    All projects are stored in the database and can be filtered by technology. 
+    Add new projects through the admin panel to showcase your work!
+  </p>
+</div>
+
+{% endblock %}

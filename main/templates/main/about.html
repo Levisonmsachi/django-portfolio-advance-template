@@ -1,0 +1,176 @@
+{% extends 'main/base.html' %}
+
+{% block title %}About Me | Portfolio{% endblock %}
+
+{% block content %}
+{% if about %}
+<h1>{{ about.title }}</h1>
+
+<!-- Hero Section with Key Stats -->
+<div style="
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 40px;
+  border-radius: 10px;
+  margin: 25px 0;
+">
+  <div style="display: flex; justify-content: space-around; text-align: center; flex-wrap: wrap;">
+    <div style="margin: 15px;">
+      <h2 style="margin: 0; font-size: 36px; font-weight: bold">{{ about.years_of_experience }}+</h2>
+      <p style="margin: 5px 0; opacity: 0.9">Years of Experience</p>
+    </div>
+    <div style="margin: 15px;">
+      <h2 style="margin: 0; font-size: 36px; font-weight: bold">{{ about.availability }}</h2>
+      <p style="margin: 5px 0; opacity: 0.9">Current Status</p>
+    </div>
+    <div style="margin: 15px;">
+      <h2 style="margin: 0; font-size: 36px; font-weight: bold">📍</h2>
+      <p style="margin: 5px 0; opacity: 0.9">{{ about.location }}</p>
+    </div>
+  </div>
+</div>
+
+<!-- Professional Summary Section -->
+<div style="margin: 40px 0;">
+  <h2 style="color: #667eea; border-bottom: 2px solid #667eea; padding-bottom: 10px;">Professional Summary</h2>
+  <div style="background: #f8fafc; padding: 25px; border-radius: 8px; border-left: 4px solid #667eea; margin-top: 20px; line-height: 1.8; font-size: 16px;">
+    <p>{{ about.professional_summary }}</p>
+  </div>
+</div>
+
+<!-- Bio Section -->
+<div style="margin: 40px 0;">
+  <h2 style="color: #667eea; border-bottom: 2px solid #667eea; padding-bottom: 10px;">My Story</h2>
+  <div style="background: #ffffff; padding: 25px; border-radius: 8px; border: 1px solid #e5e7eb; margin-top: 20px; line-height: 1.8; font-size: 16px;">
+    <p>{{ about.bio }}</p>
+  </div>
+</div>
+
+<!-- Focus Areas Section -->
+{% if focus_areas %}
+<div style="margin: 40px 0;">
+  <h2 style="color: #667eea; border-bottom: 2px solid #667eea; padding-bottom: 10px;">Areas of Focus</h2>
+  <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 20px;">
+    {% for area in focus_areas %}
+    <div style="
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 15px 25px;
+      border-radius: 25px;
+      font-weight: 500;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+    ">
+      ✨ {{ area }}
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+<!-- Contact Information Section -->
+<div style="
+  background: #f3f4f6;
+  padding: 30px;
+  border-radius: 10px;
+  margin: 40px 0;
+  border: 2px solid #e5e7eb;
+">
+  <h2 style="margin-top: 0; color: #667eea;">Get In Touch</h2>
+  <div style="display: flex; flex-direction: column; gap: 15px;">
+    {% if about.email %}
+    <div style="display: flex; align-items: center; gap: 15px;">
+      <span style="font-size: 24px;">📧</span>
+      <div>
+        <strong>Email:</strong> <a href="mailto:{{ about.email }}" style="color: #667eea; text-decoration: none;">{{ about.email }}</a>
+      </div>
+    </div>
+    {% endif %}
+    {% if about.location %}
+    <div style="display: flex; align-items: center; gap: 15px;">
+      <span style="font-size: 24px;">📍</span>
+      <div>
+        <strong>Location:</strong> {{ about.location }}
+      </div>
+    </div>
+    {% endif %}
+    <div style="display: flex; align-items: center; gap: 15px;">
+      <span style="font-size: 24px;">🚀</span>
+      <div>
+        <strong>Status:</strong> {{ about.availability }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Recent Projects Section -->
+{% if recent_projects %}
+<div style="margin: 40px 0; border-top: 2px solid #e5e7eb; padding-top: 30px;">
+  <h2 style="color: #667eea;">Featured Projects</h2>
+  <div style="
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+  ">
+    {% for project in recent_projects %}
+    <div style="
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 20px;
+      background: #ffffff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+      hover-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    ">
+      <h3 style="color: #667eea; margin-top: 0;">{{ project.title }}</h3>
+      <p style="color: #6b7280; line-height: 1.6;">{{ project.description|truncatewords:30 }}</p>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+        <span style="
+          background: #667eea;
+          color: white;
+          padding: 5px 12px;
+          border-radius: 15px;
+          font-size: 13px;
+          font-weight: 500;
+        ">
+          {{ project.technology }}
+        </span>
+        <small style="color: #9ca3af;">{{ project.created_at|date:"M d, Y" }}</small>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+<!-- Last Updated Info -->
+<div style="
+  margin-top: 50px;
+  padding: 20px;
+  background: #f8fafc;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+  text-align: center;
+  color: #6b7280;
+">
+  <p style="margin: 0; font-size: 14px;">✅ Last updated on {{ about.updated_at|date:"F d, Y" }}</p>
+</div>
+
+{% else %}
+<div style="
+  text-align: center;
+  padding: 60px 20px;
+  background: #f8fafc;
+  border-radius: 10px;
+  border: 2px dashed #e5e7eb;
+">
+  <h2 style="color: #667eea;">Welcome to My Portfolio</h2>
+  <p style="font-size: 16px; color: #6b7280; line-height: 1.6;">
+    The about page is being set up! <br>
+    Please add your information through the admin panel to get started.
+  </p>
+</div>
+{% endif %}
+
+{% endblock %}
