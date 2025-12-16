@@ -119,8 +119,6 @@ python manage.py createsuperuser
 
 # 6. Launch development server
 python manage.py runserver
-
-```
 Access Points
 🌐 Portfolio Website: http://127.0.0.1:8000/
 
@@ -317,5 +315,4 @@ https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoC
 
 ✨ Crafted with passion by Levvie-Livvie • December 2025 ✨
 
-</div> 
-
+</div> ```
