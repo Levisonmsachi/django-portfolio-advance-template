@@ -273,46 +273,61 @@ Review Django documentation for framework-specific questions
 
 Contact support for template-specific issues
 
-📞 Contact & Connect
-<div align="center">
-Levvie-Livvie
-Full Stack Developer & Django Specialist
+## 📞 Contact & Connect
 
-https://img.shields.io/badge/Email-levisonmsachi03@gmail.com-D14836?style=for-the-badge&logo=gmail
-https://img.shields.io/badge/GitHub-Levisonmsachi-181717?style=for-the-badge&logo=github
-https://img.shields.io/badge/%F0%9F%96%A5%EF%B8%8F-Portfolio_Project-4CC9F0?style=for-the-badge
+<div align="center">
+
+<strong>Levvie-Livvie</strong><br>
+Full Stack Developer · Django Specialist
+
+<br>
+
+<a href="mailto:levisonmsachi03@gmail.com">
+  <img src="https://img.shields.io/badge/Email-levisonmsachi03@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white">
+</a>
+
+<a href="https://github.com/Levisonmsachi">
+  <img src="https://img.shields.io/badge/GitHub-Levisonmsachi-181717?style=for-the-badge&logo=github&logoColor=white">
+</a>
+
+<a href="#">
+  <img src="https://img.shields.io/badge/Portfolio-Django_Project-4CC9F0?style=for-the-badge">
+</a>
 
 </div>
-📄 License
-This project is licensed under the MIT License - see the LICENSE file for details.
 
-Permissions Include:
+---
 
-✅ Commercial use
-
-✅ Modification
-
-✅ Distribution
-
-✅ Private use
-
-Requirements:
-
-📝 License and copyright notice preservation
+## 🌟 Show Your Support
 
 <div align="center">
-🌟 Show Your Support
-If this project helped you, please give it a star!
 
-https://img.shields.io/github/stars/Levisonmsachi/django-portfolio-advance-template?style=social
+<a href="https://github.com/Levisonmsachi/django-portfolio-advance-template/stargazers">
+  <img src="https://img.shields.io/github/stars/Levisonmsachi/django-portfolio-advance-template?style=for-the-badge">
+</a>
 
-🎯 Built With Precision
-https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white
-https://img.shields.io/badge/Django-092E20?style=flat&logo=django&logoColor=white
-https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white
-https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white
-https://img.shields.io/badge/SQLite-07405E?style=flat&logo=sqlite&logoColor=white
+</div>
 
-✨ Crafted with passion by Levvie-Livvie • December 2025 ✨
+---
+
+## 🛠️ Built With
+
+<div align="center">
+
+<img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white">
+<img src="https://img.shields.io/badge/Django-092E20?style=flat&logo=django&logoColor=white">
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white">
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white">
+<img src="https://img.shields.io/badge/SQLite-07405E?style=flat&logo=sqlite&logoColor=white">
+
+</div>
+
+---
+
+<p align="center">
+  <sub>✨ Crafted with passion by <strong>Levvie-Livvie</strong> · December 2025 ✨</sub>
+</p>
+
 
 </div> ```
+
