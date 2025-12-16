@@ -166,10 +166,10 @@ django-portfolio-advance-template/
 Database Models
 python
 # Core Models Overview
-- Project: title, description, tech_stack, image_url, date_created
-- Skill: name, category, proficiency (1-100), icon_class
-- AboutMe: bio, focus_areas, availability, resume_url
-- ContactMessage: name, email, message, timestamp, is_read
+# Project: title, description, tech_stack, image_url, date_created
+# Skill: name, category, proficiency (1-100), icon_class
+# AboutMe: bio, focus_areas, availability, resume_url
+# ContactMessage: name, email, message, timestamp, is_read
 ⚙️ Admin Dashboard Guide
 Accessing the Dashboard
 Navigate to /admin
@@ -301,25 +301,18 @@ Requirements:
 📝 License and copyright notice preservation
 
 <div align="center">
-
-### **🌟 Show Your Support**
+🌟 Show Your Support
 If this project helped you, please give it a star!
 
-[![GitHub stars](https://img.shields.io/github/stars/Levisonmsachi/django-portfolio-advance-template?style=social&label=Star&maxAge=2592000)](https://github.com/Levisonmsachi/django-portfolio-advance-template/stargazers)
+https://img.shields.io/github/stars/Levisonmsachi/django-portfolio-advance-template?style=social&label=Star&maxAge=2592000
 
----
+🎯 Built With Precision
+https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white
+https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white
+https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white
+https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white
+https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white
 
-### **🎯 Built With Precision**
-[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)](https://www.djangoproject.com/)
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
-[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
-[![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)](https://www.sqlite.org/)
-
----
-
-**✨ Crafted with passion by Levvie-Livvie • December 2025 ✨**
+✨ Crafted with passion by Levvie-Livvie • December 2025 ✨
 
 </div>
-
-
