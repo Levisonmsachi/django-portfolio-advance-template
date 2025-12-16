@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/Levisonmsachi/django-portfolio-advance-template/blob/main/Screenshot%202025-12-16%20130802.png" width="800" alt="Levvie-Livvie Portfolio Dashboard">
+  <img src="https://github.com/Levisonmsachi/django-portfolio-advance-template/raw/main/Screenshot%202025-12-16%20130802.png" width="800" alt="Levvie-Livvie Portfolio Dashboard">
 </p>
 
 <h1 align="center">🚀 Levvie-Livvie Portfolio</h1>
@@ -75,11 +75,11 @@
 <div align="center">
   
 ### 🖥️ Main Portfolio Interface
-<img src="https://github.com/Levisonmsachi/django-portfolio-advance-template/blob/main/Screenshot%202025-12-16%20120823.png" width="90%" alt="Portfolio Interface">
+<img src="https://github.com/Levisonmsachi/django-portfolio-advance-template/raw/main/Screenshot%202025-12-16%20120823.png" width="90%" alt="Portfolio Interface">
   
 ### 📱 Responsive Design
-<img src="https://github.com/Levisonmsachi/django-portfolio-advance-template/blob/main/Screenshot%202025-12-16%20130743.png" width="45%" style="margin-right: 2%;" alt="Mobile View">
-<img src="https://github.com/Levisonmsachi/django-portfolio-advance-template/blob/main/Screenshot%202025-12-16%20120847.png" width="45%" alt="Admin Panel">
+<img src="https://github.com/Levisonmsachi/django-portfolio-advance-template/raw/main/Screenshot%202025-12-16%20130743.png" width="45%" style="margin-right: 2%;" alt="Mobile View">
+<img src="https://github.com/Levisonmsachi/django-portfolio-advance-template/raw/main/Screenshot%202025-12-16%20120847.png" width="45%" alt="Admin Panel">
 
 </div>
 
@@ -315,4 +315,4 @@ https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoC
 
 ✨ Crafted with passion by Levvie-Livvie • December 2025 ✨
 
-</div>
+</div> 
